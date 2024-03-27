@@ -136,6 +136,7 @@
 
 #menu .visual_container > div {
   position: relative;
+  z-index: 9999;
 }
 
 #menu .visual_container .menu01 {
