@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', function () {
   });
 
   // Section 02 Animation
-  gsap.to('#secton02 .we', {
+  gsap.to('#section02 .we', {
     scrollTrigger: {
       trigger: '.trigger-this-we',
       start: 'top top', // 앞의 값: trigger에 적용되어 있는 요소의 위치, 뒤의 값: 화면의 표시 위치
@@ -105,7 +105,7 @@ window.addEventListener('DOMContentLoaded', function () {
       end: 'bottom bottom',
       pin: true,
       scrub: true,
-      markers: true,
+      //markers: true,
     },
   });
 
@@ -147,7 +147,78 @@ window.addEventListener('DOMContentLoaded', function () {
       start: 'top top',
       scrub: true,
       toggleClass: 'on',
-      markers: true,
+      // markers: true,
     },
+  });
+
+  //section 04 overlay opacity animation
+  gsap.to('.fix-this-4', {
+    scrollTrigger: {
+      trigger: '.trigger-this-4',
+      strart: 'top top',
+      pin: true,
+      scrub: true,
+      //markers: true,
+    },
+  });
+
+  gsap.to('.overlay', {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: '#section04',
+      start: '2000 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section 04 bottom text image animation
+  let sec04 = gsap.timeline();
+  ScrollTrigger.create({
+    animation: sec04,
+    trigger: '#section04',
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: 1,
+    markers: true,
+  });
+
+  sec04.to('#section04 .title_w', { x: -5500 }, 0);
+  sec04.to('#section04 .title_b', { x: 6000 }, 0);
+  sec04.to('#section04 .bg', { scale: 1.2 }, 0);
+
+  sec04.to('#section04 .img01', { y: -4000 }, 0);
+  sec04.to('#section04 .img02', { y: -3500 }, 0);
+  sec04.to('#section04 .img03', { y: -3800 }, 0);
+  sec04.to('#section04 .img04', { y: -3600 }, 0);
+  sec04.to('#section04 .img05', { y: -3500 }, 0);
+  sec04.to('#section04 .img06', { y: -3400 }, 0);
+
+  const imgs = document.querySelectorAll('#section04 .visual_container > div');
+
+  imgs.forEach((img, idx) => {
+    let sc05 = gsap.timeline();
+
+    ScrollTrigger.create({
+      animation: sc05,
+      trigger: img,
+      start: '-500px top',
+      end: 'bottom bottom',
+      scrub: 1.8,
+      // markers: true,
+    });
+    sc05.fromTo(
+      img,
+      {
+        x: idx % 2 === 0 ? -300 : 300,
+        opacity: 0,
+        ease: 'linear',
+      },
+      { x: 0, ease: 'linear', opacity: 1 }
+      // '+=10'
+      // idx / 2
+      // idx * 0.5
+    );
   });
 });

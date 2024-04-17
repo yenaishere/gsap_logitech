@@ -20,9 +20,9 @@
   overflow: hidden;
 }
 
-.scroll-content > section:nth-child(even) {
+/* .scroll-content > section:nth-child(even) {
   background: red;
-}
+} */
 
 .posNum {
   position: fixed;
