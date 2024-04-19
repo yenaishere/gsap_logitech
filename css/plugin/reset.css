@@ -88,7 +88,7 @@ video {
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* padding이 박스 안쪽으로 잡힘 */
 }
 
 article,
