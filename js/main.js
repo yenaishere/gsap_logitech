@@ -588,4 +588,133 @@ window.addEventListener('DOMContentLoaded', function () {
       // markers: true,
     },
   });
+
+  const video10 = document.querySelector('#sc10_video');
+  const video11 = document.querySelector('#sc11_video');
+
+  gsap.to('#section10', {
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '-500 top',
+      scrub: true,
+      // markers: true,
+      onEnter: () => {
+        video10.play();
+      },
+
+      onLeaveBack: () => {
+        video10.currentTime = 0; // 비디오가 처음부터 재생
+        video10.pause();
+      },
+    },
+  });
+
+  // javascript add or remove class : abc.classList.add('on')
+  // select element : document.querySelector('.abc')
+
+  // jQuery add or remove class:  abc.addClass('on') or abc.removeClass('on')
+  // select element : $('.abc')
+
+  // 글자 위로 슬라이드 되는 효과
+  gsap.to('#section10 .page03', {
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '750 top',
+      scrub: true,
+      // markers: true,
+      //시작점과 종료점을 지정할 때 아래처럼 onEnter와 onLeave를 사용
+      onEnter: () => {
+        $('#section10 .page03').addClass('on');
+      },
+      onLeaveBack: () => {
+        $('#section10 .page03').removeClass('on');
+      },
+    },
+  });
+
+  //마우스 열 도로록 효과
+  gsap.to('#section10 .page03 .mouse .odd', {
+    y: -innerHeight * 2, //아래에서 위로면 -
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '200 top',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  gsap.to('#section10 .page03 .mouse .even', {
+    y: innerHeight * 2, //위에서 아래로이면 +
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '200 top',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  gsap.to('#section10', {
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '1300 top',
+      scrub: true,
+      // markers: true,
+      onEnter: () => {
+        video11.play();
+      },
+
+      onLeaveBack: () => {
+        video11.currentTime = 0; // 비디오가 처음부터 재생
+        video11.pause();
+      },
+    },
+  });
+
+  gsap.to('#section10 .page05 .container01 .title', {
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '3800 top',
+      scrub: true,
+      // markers: true,
+      //시작점과 종료점을 지정할 때 아래처럼 onEnter와 onLeave를 사용
+      onEnter: () => {
+        $('#section10 .page05 .container01 .title').addClass('on');
+      },
+      onLeaveBack: () => {
+        $('#section10 .page05 .container01 .title').removeClass('on');
+      },
+    },
+  });
+
+  gsap.to('#section10 .page05 .container02 .title', {
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '4500 top',
+      scrub: true,
+      // markers: true,
+      //시작점과 종료점을 지정할 때 아래처럼 onEnter와 onLeave를 사용
+      onEnter: () => {
+        $('#section10 .page05 .container02 .title').addClass('on');
+      },
+      onLeaveBack: () => {
+        $('#section10 .page05 .container02 .title').removeClass('on');
+      },
+    },
+  });
+
+  gsap.to('#section10 .page05 .container03 .title', {
+    scrollTrigger: {
+      trigger: '#section10',
+      start: '5200 top',
+      scrub: true,
+      // markers: true,
+      //시작점과 종료점을 지정할 때 아래처럼 onEnter와 onLeave를 사용
+      onEnter: () => {
+        $('#section10 .page05 .container03 .title').addClass('on');
+      },
+      onLeaveBack: () => {
+        $('#section10 .page05 .container03 .title').removeClass('on');
+      },
+    },
+  });
 });
